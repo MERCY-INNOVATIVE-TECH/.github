@@ -1,0 +1,116 @@
+name: ⚡ Problème de Performance
+description: Signaler un problème de performance ou suggérer une optimisation
+title: "[Performance] "
+labels: ["performance", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de signaler ce problème de performance ! Cela nous aide à améliorer l'expérience utilisateur.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Description du problème
+      description: Décrivez le problème de performance rencontré
+      placeholder: "La page X met plus de 5 secondes à charger..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 📍 Zone concernée
+      description: Quelle partie de l'application est concernée ?
+      options:
+        - Temps de chargement initial (First Load)
+        - Temps de chargement des pages (Navigation)
+        - Temps de réponse API
+        - Rendu frontend (React)
+        - Requêtes base de données
+        - Assets statiques (CSS/JS/Images)
+        - Build/Bundle size
+        - Autre
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔄 Étapes pour reproduire
+      description: Comment reproduire le problème de performance ?
+      placeholder: |
+        1. Aller sur la page '/projects'
+        2. Ouvrir les DevTools (Network tab)
+        3. Observer le temps de chargement
+    validations:
+      required: true
+
+  - type: input
+    id: metrics
+    attributes:
+      label: 📊 Métriques mesurées
+      description: Quelles métriques avez-vous mesurées ? (ex: LCP: 4.2s, FID: 120ms, TTFB: 800ms)
+      placeholder: "LCP: 4.2s, FID: 120ms, TTFB: 800ms"
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ Performance attendue
+      description: Quelle performance attendez-vous ?
+      placeholder: "La page devrait charger en moins de 2 secondes..."
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ Performance actuelle
+      description: Quelle est la performance actuelle ?
+      placeholder: "La page met actuellement 5+ secondes à charger..."
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 🌍 Environnement
+      options:
+        - Production
+        - Staging
+        - Développement local
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: 🌐 Navigateur
+      placeholder: "Chrome 120, Firefox 121..."
+
+  - type: input
+    id: connection
+    attributes:
+      label: 🌐 Type de connexion
+      description: Type de connexion réseau utilisée pour le test
+      placeholder: "4G, WiFi, 3G..."
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 📸 Captures d'écran / Profils
+      description: Ajoutez des captures d'écran de Lighthouse, WebPageTest, ou des profils de performance
+      placeholder: "Glissez-déposez vos images ici"
+
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: 💡 Suggestions d'optimisation
+      description: Avez-vous des idées sur comment améliorer la performance ? (optionnel)
+      placeholder: "On pourrait implémenter le lazy loading pour..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: J'ai vérifié que ce problème de performance n'a pas déjà été signalé
+          required: true
+        - label: J'ai inclus des métriques mesurables
+          required: true

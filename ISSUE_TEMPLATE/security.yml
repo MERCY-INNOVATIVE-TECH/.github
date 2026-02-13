@@ -1,0 +1,89 @@
+name: 🔒 Rapport de Sécurité
+description: Signaler une vulnérabilité de sécurité (ne sera pas rendu public immédiatement)
+title: "[Security] "
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **IMPORTANT** : Ce template est pour les rapports de sécurité. Ne l'utilisez pas pour signaler des bugs non sécuritaires.
+        
+        Les rapports de sécurité sont traités en privé. Merci de ne pas créer d'issue publique pour les problèmes de sécurité.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 🔒 Description de la vulnérabilité
+      description: Décrivez la vulnérabilité de sécurité de manière détaillée
+      placeholder: "Décrivez le problème de sécurité..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: ⚠️ Niveau de sévérité
+      description: Quelle est la sévérité de cette vulnérabilité ?
+      options:
+        - Critique - Impact majeur (ex: injection SQL, XSS critique)
+        - Haute - Impact significatif (ex: fuite de données sensibles)
+        - Moyenne - Impact modéré (ex: CSRF, privilèges)
+        - Faible - Impact limité (ex: information disclosure mineur)
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔄 Étapes pour reproduire
+      description: Comment reproduire cette vulnérabilité ? (soyez précis mais ne partagez pas d'exploit complet)
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: 💥 Impact potentiel
+      description: Quel est l'impact potentiel de cette vulnérabilité ?
+      placeholder: "Cette vulnérabilité pourrait permettre à un attaquant de..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 🌍 Environnement
+      description: Dans quel environnement cette vulnérabilité a-t-elle été découverte ?
+      placeholder: "Production, Staging, Développement local..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: 🛡️ Mesures d'atténuation
+      description: Y a-t-il des mesures d'atténuation temporaires que nous pourrions mettre en place ?
+      placeholder: "En attendant un correctif, on pourrait..."
+
+  - type: textarea
+    id: disclosure
+    attributes:
+      label: 📅 Plan de divulgation
+      description: Souhaitez-vous que cette vulnérabilité soit divulguée publiquement après correction ? Quand ?
+      placeholder: "Je souhaite une divulgation coordonnée après correction..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: J'ai vérifié que ce problème de sécurité n'a pas déjà été signalé
+          required: true
+        - label: Je comprends que ce rapport sera traité en privé
+          required: true
+        - label: J'ai inclus toutes les informations nécessaires pour reproduire le problème
+          required: true

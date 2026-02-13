@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Support & Questions
+    url: https://github.com/MERCY-INNOVATIVE-TECH/mitechv2/discussions
+    about: Posez vos questions et obtenez de l'aide de la communauté
+  - name: 📧 Contact Email
+    url: mailto:contact@mi-tech.site
+    about: Contactez-nous directement par email pour des questions importantes

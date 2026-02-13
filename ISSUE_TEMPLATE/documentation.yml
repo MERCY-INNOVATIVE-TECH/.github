@@ -1,0 +1,71 @@
+name: 📚 Amélioration de Documentation
+description: Signaler un problème de documentation ou suggérer une amélioration
+title: "[Docs] "
+labels: ["documentation", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de contribuer à améliorer notre documentation !
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Description
+      description: Décrivez le problème ou l'amélioration souhaitée pour la documentation
+      placeholder: "La documentation sur X n'est pas claire ou manquante..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 📍 Type de problème
+      description: Quel type de problème de documentation ?
+      options:
+        - Documentation manquante
+        - Documentation incorrecte ou obsolète
+        - Documentation peu claire ou confuse
+        - Exemples manquants
+        - Erreurs de typographie/grammaire
+        - Amélioration suggérée
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: 📍 Emplacement
+      description: Où se trouve la documentation concernée ? (fichier, section, URL)
+      placeholder: "README.md, section 'Installation', ou https://..."
+
+  - type: textarea
+    id: current
+    attributes:
+      label: 📄 Contenu actuel
+      description: Quel est le contenu actuel de la documentation ? (si applicable)
+      placeholder: "Copiez-collez le contenu actuel..."
+
+  - type: textarea
+    id: suggested
+    attributes:
+      label: ✨ Contenu suggéré
+      description: Quel contenu suggérez-vous ? (si vous avez une idée)
+      placeholder: "Voici ce que je suggère..."
+
+  - type: textarea
+    id: context
+    attributes:
+      label: ℹ️ Contexte supplémentaire
+      description: Tout autre contexte qui pourrait être utile
+      placeholder: "Cette documentation serait particulièrement utile pour..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: J'ai vérifié que ce problème de documentation n'a pas déjà été signalé
+          required: true
+        - label: J'ai décrit clairement le problème ou l'amélioration
+          required: true

@@ -1,0 +1,97 @@
+name: ✨ Demande de Fonctionnalité
+description: Proposer une nouvelle fonctionnalité ou amélioration
+title: "[Feature] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de votre suggestion ! Veuillez décrire clairement la fonctionnalité souhaitée.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 🎯 Problème à résoudre
+      description: Quel problème cette fonctionnalité résout-elle ? Décrivez le cas d'usage
+      placeholder: "En tant qu'utilisateur, je souhaite pouvoir..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 💡 Solution proposée
+      description: Décrivez la fonctionnalité que vous aimeriez voir implémentée
+      placeholder: "Il serait intéressant d'ajouter..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔄 Alternatives envisagées
+      description: Avez-vous envisagé d'autres solutions ou fonctionnalités ?
+      placeholder: "J'ai aussi pensé à..."
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: ⚡ Priorité
+      description: Quelle est la priorité de cette fonctionnalité pour vous ?
+      options:
+        - Faible - Nice to have
+        - Moyenne - Améliorerait l'expérience utilisateur
+        - Haute - Bloque un cas d'usage important
+        - Critique - Bloque un workflow essentiel
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 📍 Zone concernée
+      description: Quelle partie de l'application est concernée ?
+      options:
+        - Frontend (React/TypeScript)
+        - Backend (Laravel/PHP)
+        - API
+        - Base de données
+        - UI/UX
+        - Performance
+        - Sécurité
+        - Documentation
+        - Tests
+        - Autre
+    validations:
+      required: true
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: 🎨 Maquettes / Exemples
+      description: Si applicable, ajoutez des maquettes, wireframes ou exemples visuels
+      placeholder: "Glissez-déposez vos images ici"
+
+  - type: textarea
+    id: technical
+    attributes:
+      label: 🔧 Considérations techniques
+      description: Avez-vous des idées sur l'implémentation technique ? (optionnel)
+      placeholder: "Cette fonctionnalité pourrait utiliser..."
+
+  - type: textarea
+    id: context
+    attributes:
+      label: ℹ️ Contexte supplémentaire
+      description: Tout autre contexte qui pourrait être utile
+      placeholder: "Cette fonctionnalité serait particulièrement utile pour..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: J'ai vérifié qu'une fonctionnalité similaire n'existe pas déjà
+          required: true
+        - label: J'ai décrit clairement le problème et la solution
+          required: true

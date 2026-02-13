@@ -1,0 +1,119 @@
+name: 🐛 Rapport de Bug
+description: Signaler un bug ou un problème rencontré dans l'application
+title: "[Bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps de signaler ce bug ! Veuillez remplir tous les champs pertinents.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Description du bug
+      description: Décrivez clairement et de manière concise le problème rencontré
+      placeholder: "Exemple : Le bouton de soumission du formulaire de contact ne fonctionne pas..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔄 Étapes pour reproduire
+      description: Liste des étapes pour reproduire le comportement
+      placeholder: |
+        1. Aller sur la page '/contact'
+        2. Remplir le formulaire
+        3. Cliquer sur 'Envoyer'
+        4. Voir l'erreur
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ Comportement attendu
+      description: Ce qui devrait se passer normalement
+      placeholder: "Le formulaire devrait être soumis et afficher un message de succès"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ Comportement actuel
+      description: Ce qui se passe réellement
+      placeholder: "Une erreur 500 s'affiche et le formulaire n'est pas soumis"
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 📸 Captures d'écran
+      description: Si applicable, ajoutez des captures d'écran pour illustrer le problème
+      placeholder: "Glissez-déposez vos images ici"
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 🌍 Environnement
+      description: Dans quel environnement le bug a-t-il été rencontré ?
+      options:
+        - Production
+        - Staging
+        - Développement local
+        - Autre
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: 🌐 Navigateur
+      description: Quel navigateur utilisez-vous ? (ex: Chrome 120, Firefox 121, Safari 17)
+      placeholder: "Chrome 120.0.6099.109"
+
+  - type: input
+    id: os
+    attributes:
+      label: 💻 Système d'exploitation
+      description: Quel système d'exploitation ? (ex: macOS 14.2, Windows 11, Ubuntu 22.04)
+      placeholder: "macOS 14.2"
+
+  - type: input
+    id: device
+    attributes:
+      label: 📱 Appareil
+      description: Desktop, Mobile, Tablet ?
+      placeholder: "Desktop"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 📋 Logs / Erreurs
+      description: Copiez-collez les messages d'erreur de la console du navigateur ou des logs Laravel
+      placeholder: |
+        ```
+        [2026-02-12 10:30:45] ERROR: ...
+        ```
+
+  - type: textarea
+    id: context
+    attributes:
+      label: ℹ️ Contexte supplémentaire
+      description: Tout autre contexte qui pourrait être utile
+      placeholder: "Ce bug apparaît uniquement après avoir effectué une action spécifique..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: J'ai vérifié que ce bug n'a pas déjà été signalé
+          required: true
+        - label: J'ai testé sur la dernière version du code
+          required: true
+        - label: J'ai inclus toutes les informations nécessaires
+          required: true
